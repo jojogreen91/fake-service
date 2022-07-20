@@ -20,11 +20,17 @@ public class Controller {
     }
 
     @GetMapping ("/no-hook-deploy")
-    public ResponseEntity<String> noHookDeploy() throws IOException {
+    public ResponseEntity<String> noHookDeploy() {
 
         System.out.println("no-hook-deploy API 시작");
 
-        Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            processBuilder.command("/home/ubuntu/deploy.sh");
+            processBuilder.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println("쉘 스크립트 배포 실패");
 
