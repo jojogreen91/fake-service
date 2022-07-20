@@ -12,7 +12,7 @@ public class Controller {
 
     @PostMapping("/deploy")
     public ResponseEntity<String> deploy(@RequestBody GitHubWebHookRequest gitHubWebHookRequest) {
-        if (!gitHubWebHookRequest.getHook_id().equals("369605028")) {
+        if (!gitHubWebHookRequest.getHook_id().isBlank()) {
             throw new IllegalStateException();
         }
         return ResponseEntity.ok("deploy Success");
