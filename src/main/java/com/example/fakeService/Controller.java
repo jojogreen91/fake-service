@@ -16,7 +16,15 @@ public class Controller {
 
         Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
 
-        return ResponseEntity.ok("배포 스크립트 실행 성공");
+        return ResponseEntity.ok("깃 허브 웹 훅 연결 성공");
+    }
+
+    @GetMapping ("/no-hook-deploy")
+    public ResponseEntity<String> noHookDeploy() throws IOException {
+
+        Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+
+        return ResponseEntity.ok("노 훅 배포");
     }
 
     @GetMapping("/hello")
