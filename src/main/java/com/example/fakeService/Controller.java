@@ -47,8 +47,8 @@ public class Controller {
         return ResponseEntity.ok("FUCK YOU");
     }
 
-    @GetMapping("/check")
-    public ResponseEntity<String> check() {
-        return ResponseEntity.ok("NEW VERSION IS ARRIVED!!!");
-    }
+//    @GetMapping("/check")
+//    public ResponseEntity<String> check() {
+//        return ResponseEntity.ok("NEW VERSION IS ARRIVED!!!");
+//    }
 }
