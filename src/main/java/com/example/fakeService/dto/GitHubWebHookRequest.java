@@ -2,16 +2,16 @@ package com.example.fakeService.dto;
 
 public class GitHubWebHookRequest {
 
-    private String hook_id;
+    private String ref;
 
     public GitHubWebHookRequest() {
     }
 
-    public GitHubWebHookRequest(final String hook_id) {
-        this.hook_id = hook_id;
+    public GitHubWebHookRequest(final String ref) {
+        this.ref = ref;
     }
 
-    public String getHook_id() {
-        return hook_id;
+    public String getRef() {
+        return ref;
     }
 }
