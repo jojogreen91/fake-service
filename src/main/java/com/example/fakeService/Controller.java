@@ -27,16 +27,6 @@ public class Controller {
         try {
             // Run script
             Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
-
-            // Read output
-            StringBuilder output = new StringBuilder();
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(process.getInputStream()));
-
-            String line;
-            while((line = reader.readLine()) != null){
-                output.append(line);
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
