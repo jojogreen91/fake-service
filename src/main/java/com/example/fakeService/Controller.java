@@ -1,9 +1,6 @@
 package com.example.fakeService;
 
 import com.example.fakeService.dto.GitHubWebHookRequest;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,11 +15,11 @@ public class Controller {
         System.out.println("gitHubWebHookRequest - REF = " + gitHubWebHookRequest.getRef());
         System.out.println("deploy API 시작");
 
-//        try {
-//            Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println("deploy API 종료");
         return ResponseEntity.ok("deploy API 종료");
@@ -47,8 +44,8 @@ public class Controller {
         return ResponseEntity.ok("FUCK YOU");
     }
 
-//    @GetMapping("/check")
-//    public ResponseEntity<String> check() {
-//        return ResponseEntity.ok("NEW VERSION IS ARRIVED!!!");
-//    }
+    @GetMapping("/check")
+    public ResponseEntity<String> check() {
+        return ResponseEntity.ok("NEW VERSION IS ARRIVED!!!");
+    }
 }
