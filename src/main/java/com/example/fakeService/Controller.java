@@ -16,7 +16,15 @@ public class Controller {
     @PostMapping("/deploy")
     public ResponseEntity<String> deploy(@RequestBody GitHubWebHookRequest gitHubWebHookRequest) {
         System.out.println("gitHubWebHookRequest - REF = " + gitHubWebHookRequest.getRef());
+        System.out.println("deploy API 시작");
 
+        try {
+            Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("deploy API 종료");
         return ResponseEntity.ok("deploy API 종료");
     }
 
@@ -25,14 +33,12 @@ public class Controller {
         System.out.println("noHookDeploy API 시작");
 
         try {
-            // Run script
-            Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+            Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         System.out.println("쉘 스크립트 실행 종료");
-
         return ResponseEntity.ok("noHookDeploy API 종료");
     }
 
