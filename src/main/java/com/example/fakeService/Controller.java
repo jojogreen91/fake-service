@@ -24,7 +24,7 @@ public class Controller {
 
         try {
             ProcessBuilder processBuilder = new ProcessBuilder();
-            processBuilder.command("/home/ubuntu/deploy.sh");
+            processBuilder.command("/home/ubuntu/fun.sh");
             processBuilder.start();
         } catch (Exception e) {
             e.printStackTrace();
