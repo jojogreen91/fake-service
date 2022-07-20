@@ -51,6 +51,6 @@ public class Controller {
 
     @GetMapping("/isReal")
     public String isReal() {
-        return "이게 된다고?";
+        return "이게 된다고? 진짜?";
     }
 }
