@@ -26,7 +26,7 @@ public class Controller {
 
         try {
             // Run script
-            Process process = Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
+            Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
 
             // Read output
             StringBuilder output = new StringBuilder();
