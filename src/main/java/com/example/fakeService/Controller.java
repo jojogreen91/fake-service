@@ -1,7 +1,9 @@
 package com.example.fakeService;
 
 import com.example.fakeService.dto.GitHubWebHookRequest;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,10 +25,18 @@ public class Controller {
         System.out.println("noHookDeploy API 시작");
 
         try {
-//            ProcessBuilder processBuilder = new ProcessBuilder();
-//            processBuilder.command("/home/ubuntu/fun.sh");
-//            processBuilder.start();
-            Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
+            // Run script
+            Process process = Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
+
+            // Read output
+            StringBuilder output = new StringBuilder();
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while((line = reader.readLine()) != null){
+                output.append(line);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
