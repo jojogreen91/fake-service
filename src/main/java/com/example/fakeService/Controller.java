@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @PostMapping("/deploy")
-    public ResponseEntity<Void> deploy(@RequestBody GitHubWebHookRequest gitHubWebHookRequest) {
+    public ResponseEntity<String> deploy(@RequestBody GitHubWebHookRequest gitHubWebHookRequest) {
         if (!gitHubWebHookRequest.getHook_id().equals("369605028")) {
             throw new IllegalStateException();
         }
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("deploy Success");
     }
 
     @GetMapping("/hello")
