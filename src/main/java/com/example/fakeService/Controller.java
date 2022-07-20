@@ -33,7 +33,7 @@ public class Controller {
         System.out.println("noHookDeploy API 시작");
 
         try {
-            Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
+            Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
         } catch (Exception e) {
             e.printStackTrace();
         }
