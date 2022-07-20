@@ -22,7 +22,11 @@ public class Controller {
     @GetMapping ("/no-hook-deploy")
     public ResponseEntity<String> noHookDeploy() throws IOException {
 
+        System.out.println("no-hook-deploy API 시작");
+
         Process process = Runtime.getRuntime().exec("/home/ubuntu/deploy.sh");
+
+        System.out.println("쉘 스크립트 배포 실패");
 
         return ResponseEntity.ok("노 훅 배포");
     }
