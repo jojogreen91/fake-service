@@ -25,7 +25,7 @@ public class Controller {
         return ResponseEntity.ok("deploy API 종료");
     }
 
-    @GetMapping ("/noHookDeploy")
+    @GetMapping("/noHookDeploy")
     public ResponseEntity<String> noHookDeploy() {
         System.out.println("noHookDeploy API 시작");
 
@@ -47,5 +47,10 @@ public class Controller {
     @GetMapping("/check")
     public ResponseEntity<String> check() {
         return ResponseEntity.ok("NEW VERSION IS ARRIVED!!!");
+    }
+
+    @GetMapping("/isReal")
+    public String isReal() {
+        return "이게 된다고?";
     }
 }
