@@ -26,7 +26,7 @@ public class Controller {
 //            ProcessBuilder processBuilder = new ProcessBuilder();
 //            processBuilder.command("/home/ubuntu/fun.sh");
 //            processBuilder.start();
-            Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
+            Runtime.getRuntime().exec("./home/ubuntu/fun.sh");
         } catch (Exception e) {
             e.printStackTrace();
         }
