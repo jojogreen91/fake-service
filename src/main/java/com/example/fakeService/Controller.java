@@ -23,9 +23,10 @@ public class Controller {
         System.out.println("noHookDeploy API 시작");
 
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder();
-            processBuilder.command("/home/ubuntu/fun.sh");
-            processBuilder.start();
+//            ProcessBuilder processBuilder = new ProcessBuilder();
+//            processBuilder.command("/home/ubuntu/fun.sh");
+//            processBuilder.start();
+            Runtime.getRuntime().exec("/home/ubuntu/fun.sh");
         } catch (Exception e) {
             e.printStackTrace();
         }
