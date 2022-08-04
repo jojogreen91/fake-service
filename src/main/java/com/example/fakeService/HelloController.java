@@ -12,8 +12,8 @@ public class HelloController {
 
     private final HelloService helloService;
 
-    @GetMapping("/hello/{comment}")
-    public ResponseEntity<String> hello(@PathVariable String comment) {
+    @GetMapping(value = {"/hello", "/hello/{comment}"})
+    public ResponseEntity<String> hello(@PathVariable(required = false) String comment) {
         return ResponseEntity.ok(helloService.sayHello(comment));
     }
 }
